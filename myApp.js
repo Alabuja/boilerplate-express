@@ -17,17 +17,20 @@ console.log("Hello World");
 //     res.send("Hello Express");
 // });
 /** 3) Serve an HTML file */
-let absolutePath = __dirname + "/views/index.html";
-app.get("/", function(req, res){
-    res.sendFile(absolutePath);
-});
+// let absolutePath = __dirname + "/views/index.html";
+// app.get("/", function(req, res){
+//     res.sendFile(absolutePath);
+// });
 
 /** 4) Serve static assets  */
-let path = __dirname + "/public";
-app.use(express.static(path));
+// let path = __dirname + "/public";
+// app.use(express.static(path));
 
 /** 5) serve JSON on a specific route */
 
+app.get("/json", function(req, res){
+    res.json({"message": "Hello json"});
+});
 
 /** 6) Use the .env file to configure the app */
  
