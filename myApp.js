@@ -29,8 +29,12 @@ console.log("Hello World");
 /** 5) serve JSON on a specific route */
 
 app.get("/json", function(req, res){
+	if(process.env.MESSAGE_STYLE === 'uppercase'){
+		res.json({"message": "HELLO JSON"});
+	}
     res.json({"message": "Hello json"});
 });
+
 
 /** 6) Use the .env file to configure the app */
  
